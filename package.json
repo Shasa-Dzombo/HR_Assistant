@@ -1,0 +1,26 @@
+{
+  "name": "hr-assistant",
+  "version": "1.0.0",
+  "description": "AI-powered HR Assistant system with specialized bots for HR tasks",
+  "main": "src/main.py",
+  "scripts": {
+    "start": "python src/main.py",
+    "dev": "python src/main.py --dev",
+    "test": "pytest tests/",
+    "lint": "flake8 src/ tests/",
+    "format": "black src/ tests/"
+  },
+  "keywords": [
+    "hr",
+    "ai",
+    "assistant",
+    "automation",
+    "recruitment",
+    "employee-management"
+  ],
+  "author": "HR Assistant Team",
+  "license": "MIT",
+  "engines": {
+    "python": ">=3.8"
+  }
+}

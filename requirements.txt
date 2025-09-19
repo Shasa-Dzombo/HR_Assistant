@@ -1,0 +1,53 @@
+# Core dependencies
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+sqlalchemy
+alembic
+python-dotenv
+httpx
+
+# AI/ML dependencies
+google-generativeai
+langgraph
+langchain
+langchain-core
+langchain-google-genai
+transformers
+sentence-transformers
+spacy
+
+# Database
+psycopg2-binary
+asyncpg
+aiosqlite
+redis
+
+# Document processing
+pypdf2
+python-docx
+openpyxl
+python-multipart
+
+# Email and notifications
+sendgrid
+
+# Utilities
+pandas
+numpy
+requests
+celery
+schedule
+
+# Development and testing
+pytest
+pytest-asyncio
+black
+flake8
+mypy
+
+# Security
+passlib
+python-jose
+bcrypt==4.1.2
