@@ -176,19 +176,22 @@ class HRAssistantApp:
                 response = await self.bot_manager.process_request(user_input)
                 
                 # Display response
-                print(f"\n✅ Response from {response.data.get('selected_bot', 'Unknown')} bot:")
+                handled_by = response.data.get('handled_by', 'Unknown') if response.data else 'Unknown'
+                print(f"\n✅ Response from {handled_by} bot:")
                 print(f"Success: {response.success}")
                 print(f"Message: {response.message}")
                 
-                if response.data and 'bot_response' in response.data:
-                    bot_response = response.data['bot_response']
-                    if bot_response.get('data'):
-                        print(f"Data: {bot_response['data']}")
-                    if bot_response.get('suggestions'):
-                        print(f"Suggestions: {', '.join(bot_response['suggestions'])}")
+                if response.data:
+                    print(f"Additional Data: {response.data}")
                 
-                if not response.success and response.error:
-                    print(f"❌ Error: {response.error}")
+                if response.next_steps:
+                    print(f"Next Steps: {', '.join(response.next_steps)}")
+                
+                if response.action_taken:
+                    print(f"Action Taken: {response.action_taken}")
+                
+                if response.confidence_score is not None:
+                    print(f"Confidence: {response.confidence_score:.2f}")
                 
             except KeyboardInterrupt:
                 print("\n\nReturning to main menu...")
